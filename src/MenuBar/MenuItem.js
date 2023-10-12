@@ -21,6 +21,7 @@ const variants = {
 const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF", "#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF", "#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF", "#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF", "#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
 
 export const MenuItem = ({ r, i }) => {
+    if(r.length < 2) return null;
   const style = { border: `2px solid ${colors[i]}` };
   return (
     <a href={r}>
