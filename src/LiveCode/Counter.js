@@ -26,6 +26,7 @@ const Counter = () => {
           border: "2px solid white",
           fontSize: "28px",
           margin: "10px",
+          cursor: "pointer"
         }}
       >
         +
