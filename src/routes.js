@@ -39,19 +39,19 @@ export const routes = [
     element: <ReOrder />,
   },
   {
-    path: "/layout",
-    element: <ExpandableTag />
-  },
-  {
-    path: "/layoutId",
-    element: <MagicWidgetComponent />
-  },
-  {
-    path: "/basic",
+    path: "/live-demo-basic",
     element: <Counter />
   },
   {
-    path: "/spotify",
+    path: "/live-demo-layout",
+    element: <ExpandableTag />
+  },
+  {
+    path: "/live-demo-layoutId",
+    element: <MagicWidgetComponent />
+  },
+  {
+    path: "/live-demo-spotify",
     element: <Lyric />
   }
 ];
