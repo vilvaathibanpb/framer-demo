@@ -20,6 +20,7 @@ function ExpandableTag({ unhoveredText, hoveredText }) {
       >
         <motion.div
           ref={ref}
+          layout
           className="inline-block relative text-gray-300 bg-gray-900 ring-1 ring-gray-800 px-4 py-1.5 tracking-wider text-sm font-medium whitespace-nowrap"
           style={{ borderRadius: 8 }}
         >
@@ -42,9 +43,11 @@ function ExpandableTag({ unhoveredText, hoveredText }) {
 function Tag() {
   return (
     <div className="h-screen flex items-center justify-center gap-4">
+      <LayoutGroup>
       <ExpandableTag unhoveredText="INR" hoveredText="Indian Rupees" />
       <ExpandableTag unhoveredText="USD" hoveredText="US Dollars" />
       <ExpandableTag unhoveredText="EUR" hoveredText="Euro" />
+      </LayoutGroup>
     </div>
   );
 }

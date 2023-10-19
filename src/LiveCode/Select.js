@@ -19,6 +19,7 @@ const Numbers = () => {
             <motion.p className='title' style={{ padding: '20px', fontSize: '16px' }}>{item}</motion.p>
             {selectedID === index && (
               <motion.div
+                layoutId='outline'
                 style={{
                   position: 'absolute',
                   borderRadius: '50%',

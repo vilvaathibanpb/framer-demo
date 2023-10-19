@@ -21,22 +21,36 @@ function pageScroll() {
 pageScroll();
 
 function App() {
+  const { scrollYProgress } = useScroll();
+  const [scope, animate] = useAnimate()
+  let previousShownWord = 0
+
+  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
+    const showUntil = Math.floor(latest * wordsArray.length);
+    if(showUntil > wordsArray.length) return
+
+    while(previousShownWord < showUntil) {
+      animate(scope.current.children[previousShownWord], { opacity: 1 })
+      previousShownWord++
+    }
+  })
 
 
   return (
     <main className="main-container relative w-0.5 overflow-y-scroll">
-      <p
+      <motion.p
+        ref={scope}
         style={{ width: "25%", marginLeft: "50%", marginTop: "50%" }}
         className="text-white tracking-wide text-5xl leading-12 sticky top-1/2 w-0.5"
       >
         {wordsArray.map((word, i) => {
           return (
-            <span className="opacity-100" key={i}>
+            <motion.span className="opacity-0" key={i}>
               {word}{" "}
-            </span>
+            </motion.span>
           );
         })}
-      </p>
+      </motion.p>
     </main>
   );
 }

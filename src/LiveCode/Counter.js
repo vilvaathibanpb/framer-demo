@@ -8,12 +8,15 @@ const Counter = () => {
   const increment = () => setCount(count + 1);
   return (
     <div className="counter">
-      <p
+      <motion.p
         key={count}
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.3 }}
         className="title"
       >
         {count}
-      </p>
+      </motion.p>
       <div
         onClick={increment}
         style={{
